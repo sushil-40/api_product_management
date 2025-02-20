@@ -1,0 +1,31 @@
+
+# PRODUCT-MANAGEMENT
+
+@baseURL = http://localhost:8000/api/v1/products
+
+### GET the product list
+
+GET {{baseURL}}
+
+### POST request
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+      "product":"test2",
+      "price": 100
+}
+
+### PATCh request
+
+PATCH {{baseURL}}
+Content-Type: application/json
+
+{
+"_id":"67ac496a151634de8c3443f6",
+"product":"apple-banana-mango"
+}
+
+### Delete request
+
+DELETE {{baseURL}}/67ac4173e8817107fccc4f7d
