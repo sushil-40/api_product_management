@@ -22,8 +22,8 @@ PATCH {{baseURL}}
 Content-Type: application/json
 
 {
-"_id":"67ac496a151634de8c3443f6",
-"product":"apple-banana-mango"
+"_id":"67b452cf3f46377cd9d2ad41",
+"product":"Lichhi"
 }
 
 ### Delete request

@@ -39,15 +39,22 @@ router.post("/", async (req, res, next) => {
   }
 });
 router.patch("/", async (req, res) => {
-  const { _id, ...rest } = req.body;
-  console.log(req.body, "=====-----check------======");
+  try {
+    const { _id, ...rest } = req.body;
+    console.log(req.body, "=====-----check-- update----======");
 
-  const result = await updateProduct(_id, rest);
-  res.json({
-    status: "success",
-    message: "product updated successfully",
-    result,
-  });
+    const result = await updateProduct(_id, rest);
+    res.json({
+      status: "success",
+      message: "product updated successfully",
+      result,
+    });
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: error.message,
+    });
+  }
 });
 router.delete("/:_id?", async (req, res) => {
   const { _id } = req.params;
