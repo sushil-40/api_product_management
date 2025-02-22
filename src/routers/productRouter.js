@@ -40,10 +40,10 @@ router.post("/", async (req, res, next) => {
 });
 router.patch("/", async (req, res) => {
   try {
-    const { _id, ...rest } = req.body;
+    const { _id, product } = req.body;
     console.log(req.body, "=====-----check-- update----======");
 
-    const result = await updateProduct(_id, rest);
+    const result = await updateProduct(_id, { product });
     res.json({
       status: "success",
       message: "product updated successfully",
